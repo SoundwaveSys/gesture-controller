@@ -5,6 +5,9 @@ from vision.hand_tracker import HandTracker
 from gestures.classifier import classify_gesture
 from gestures.swipe import SwipeDetector
 
+from actions.keyboard import KeyboardController
+from actions.media import MediaController
+from actions.volume import VolumeController
 from actions.mouse import MouseController
 from actions.system import SystemController
 
@@ -46,6 +49,9 @@ def main():
         print(f"ERROR: Could not load hand tracker: {error}")
         return
 
+    keyboard = KeyboardController()
+    media = MediaController()
+    volume = VolumeController()
     mouse = MouseController()
     system = SystemController()
     swipe = SwipeDetector()

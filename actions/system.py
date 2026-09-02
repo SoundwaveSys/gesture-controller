@@ -31,84 +31,6 @@ class SystemController:
         return True
 
     # ============================================================
-    # VOLUME UP
-    # ============================================================
-
-    def volume_up(self):
-
-        if not self.ready():
-            return
-
-        pyautogui.press("volumeup")
-
-        print("\n🔊 VOLUME UP")
-
-    # ============================================================
-    # VOLUME DOWN
-    # ============================================================
-
-    def volume_down(self):
-
-        if not self.ready():
-            return
-
-        pyautogui.press("volumedown")
-
-        print("\n🔉 VOLUME DOWN")
-
-    # ============================================================
-    # MUTE
-    # ============================================================
-
-    def mute(self):
-
-        if not self.ready():
-            return
-
-        pyautogui.press("volumemute")
-
-        print("\n🔇 MUTE")
-
-    # ============================================================
-    # PLAY / PAUSE
-    # ============================================================
-
-    def play_pause(self):
-
-        if not self.ready():
-            return
-
-        pyautogui.press("playpause")
-
-        print("\n▶️ PLAY / PAUSE")
-
-    # ============================================================
-    # NEXT TRACK
-    # ============================================================
-
-    def next_track(self):
-
-        if not self.ready():
-            return
-
-        pyautogui.press("nexttrack")
-
-        print("\n⏭️ NEXT TRACK")
-
-    # ============================================================
-    # PREVIOUS TRACK
-    # ============================================================
-
-    def previous_track(self):
-
-        if not self.ready():
-            return
-
-        pyautogui.press("prevtrack")
-
-        print("\n⏮️ PREVIOUS TRACK")
-
-    # ============================================================
     # ALT + TAB
     # ============================================================
 
@@ -155,36 +77,6 @@ class SystemController:
         )
 
         print("\n🔒 WINDOWS LOCKED")
-
-    # ============================================================
-    # SWIPE RIGHT
-    # ============================================================
-
-    def swipe_right(self):
-
-        if not self.ready():
-            return
-
-        pyautogui.press(
-            "nexttrack"
-        )
-
-        print("\n👉 NEXT TRACK")
-
-    # ============================================================
-    # SWIPE LEFT
-    # ============================================================
-
-    def swipe_left(self):
-
-        if not self.ready():
-            return
-
-        pyautogui.press(
-            "prevtrack"
-        )
-
-        print("\n👈 PREVIOUS TRACK")
 
     # ============================================================
     # SWIPE UP
