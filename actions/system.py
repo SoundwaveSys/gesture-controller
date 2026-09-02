@@ -5,14 +5,7 @@ import pyautogui
 class SystemController:
 
     def __init__(self):
-
-        # ========================================================
-        # ACTION CONTROL
-        # ========================================================
-
         self.last_action = 0
-
-        # Prevent repeated system actions
         self.cooldown = 0.7
 
     # ============================================================
@@ -27,11 +20,66 @@ class SystemController:
             return False
 
         self.last_action = now
-
         return True
 
     # ============================================================
-    # ALT + TAB
+    # VOLUME
+    # ============================================================
+
+    def volume_up(self):
+
+        if not self.ready():
+            return
+
+        pyautogui.press("volumeup")
+        print("\n🔊 VOLUME UP")
+
+    def volume_down(self):
+
+        if not self.ready():
+            return
+
+        pyautogui.press("volumedown")
+        print("\n🔉 VOLUME DOWN")
+
+    def mute(self):
+
+        if not self.ready():
+            return
+
+        pyautogui.press("volumemute")
+        print("\n🔇 MUTE")
+
+    # ============================================================
+    # MEDIA
+    # ============================================================
+
+    def play_pause(self):
+
+        if not self.ready():
+            return
+
+        pyautogui.press("playpause")
+        print("\n▶️ PLAY / PAUSE")
+
+    def next_track(self):
+
+        if not self.ready():
+            return
+
+        pyautogui.press("nexttrack")
+        print("\n⏭️ NEXT TRACK")
+
+    def previous_track(self):
+
+        if not self.ready():
+            return
+
+        pyautogui.press("prevtrack")
+        print("\n⏮️ PREVIOUS TRACK")
+
+    # ============================================================
+    # WINDOWS
     # ============================================================
 
     def alt_tab(self):
@@ -39,73 +87,41 @@ class SystemController:
         if not self.ready():
             return
 
-        pyautogui.hotkey(
-            "alt",
-            "tab"
-        )
-
+        pyautogui.hotkey("alt", "tab")
         print("\n🪟 ALT + TAB")
-
-    # ============================================================
-    # SHOW DESKTOP
-    # ============================================================
 
     def show_desktop(self):
 
         if not self.ready():
             return
 
-        pyautogui.hotkey(
-            "win",
-            "d"
-        )
-
+        pyautogui.hotkey("win", "d")
         print("\n🖥️ SHOW DESKTOP")
-
-    # ============================================================
-    # LOCK WINDOWS
-    # ============================================================
 
     def lock_windows(self):
 
         if not self.ready():
             return
 
-        pyautogui.hotkey(
-            "win",
-            "l"
-        )
-
+        pyautogui.hotkey("win", "l")
         print("\n🔒 WINDOWS LOCKED")
 
     # ============================================================
-    # SWIPE UP
+    # SWIPES
     # ============================================================
+
+    def swipe_right(self):
+
+        self.next_track()
+
+    def swipe_left(self):
+
+        self.previous_track()
 
     def swipe_up(self):
 
-        if not self.ready():
-            return
-
-        pyautogui.hotkey(
-            "alt",
-            "tab"
-        )
-
-        print("\n⬆️ ALT + TAB")
-
-    # ============================================================
-    # SWIPE DOWN
-    # ============================================================
+        self.alt_tab()
 
     def swipe_down(self):
 
-        if not self.ready():
-            return
-
-        pyautogui.hotkey(
-            "win",
-            "d"
-        )
-
-        print("\n⬇️ SHOW DESKTOP")
+        self.show_desktop()
